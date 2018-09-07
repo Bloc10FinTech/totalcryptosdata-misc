@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Predator-Alerts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+	<div class="col-md-6">
+		<h2><b>Predator Signals Feed</b></h2> 
+		<div class="row" id="alerts_div">
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h2><b>Trade Alerts</b></h2>
+		<div class="row">
+			<div class="col-md-12" id="trade_div">
+				<table class="table table-bordered">
+				<tbody id="trade">
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+  </div>
+  <div id="sound"></div>  
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="sails.io.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+</body>
+</html>
