@@ -1,8 +1,8 @@
 io.sails.url = 'https://cron.totalcryptos.com';
 //io.sails.url = 'https://13.58.6.200:9001';
 //io.sails.url = 'http://localhost:1338';
-//var roomName='user1';
 //var currencies=['btc','usd','eth','bch','gbp','ltc','eur','etc','bch'];
+var roomName='sdmhx4qy2';
 var dashboard_table_init=false;
 var is_page_load=true;
 var i=0,j=0;
@@ -10,6 +10,10 @@ $(document).ready(function(){
 	//socket_request();
 	//setInterval(socket_request, 300000);
 
+	io.socket.post('/predatortrade/subscribe_room',{roomName:roomName},function (resData) {
+		//console.log(resData);
+	}); 
+	
 	io.socket.on('predator_alert', function (object){
 	  if($("#sound")){
 		 playSound('bell'); 
