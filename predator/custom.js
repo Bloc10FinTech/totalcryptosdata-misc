@@ -1,6 +1,6 @@
-io.sails.url = 'https://cron.totalcryptos.com';
+//io.sails.url = 'https://cron.totalcryptos.com';
 //io.sails.url = 'https://13.58.6.200:9001';
-//io.sails.url = 'http://localhost:1338';
+io.sails.url = 'http://localhost:1338';
 //var currencies=['btc','usd','eth','bch','gbp','ltc','eur','etc','bch'];
 var roomName='sdmhx4qy2';
 var dashboard_table_init=false;
@@ -120,6 +120,80 @@ $(document).ready(function(){
 	  //if($("#alerts_div")){ $("#alerts_div").fadeIn(2000);}
 	  //if($("#trade_div")){ $("#trade_div").fadeIn(2000);}
 	  
+	});
+	
+	//DAY TRADING ALERT
+	io.socket.on('day_trading_alert', function (object){
+		if($("#gainers_1h")){
+			var str='';
+			console.log(object.data.gainers_1h);
+			object.data.gainers_1h.forEach(function(data){
+				str+='<tr>';
+				str+='<td>';
+				str+=data.product;
+				str+='</td>';
+				str+='<td>';
+				str+=parseFloat(data.price).toFixed(5);
+				str+='</td>';
+				str+='<td>';
+				str+=data.change_perc_1h;
+				str+='</td>';
+				str+='</td>';
+				str+='</tr>';
+			});
+			$("#gainers_1h").html(str);
+		
+			var str='';
+			object.data.losers_1h.forEach(function(data){
+				str+='<tr>';
+				str+='<td>';
+				str+=data.product;
+				str+='</td>';
+				str+='<td>';
+				str+=parseFloat(data.price).toFixed(5);
+				str+='</td>';
+				str+='<td>';
+				str+=data.change_perc_1h;
+				str+='</td>';
+				str+='</td>';
+				str+='</tr>';
+			});
+			$("#losers_1h").html(str);
+		
+			var str='';
+			object.data.gainers_24h.forEach(function(data){
+				str+='<tr>';
+				str+='<td>';
+				str+=data.product;
+				str+='</td>';
+				str+='<td>';
+				str+=parseFloat(data.price).toFixed(5);
+				str+='</td>';
+				str+='<td>';
+				str+=data.change_perc_24h;
+				str+='</td>';
+				str+='</td>';
+				str+='</tr>';
+			});
+			$("#gainers_24h").html(str);
+		
+			var str='';
+			object.data.losers_24h.forEach(function(data){
+				str+='<tr>';
+				str+='<td>';
+				str+=data.product;
+				str+='</td>';
+				str+='<td>';
+				str+=parseFloat(data.price).toFixed(5);
+				str+='</td>';
+				str+='<td>';
+				str+=data.change_perc_24h;
+				str+='</td>';
+				str+='</td>';
+				str+='</tr>';
+			});
+			$("#losers_24h").html(str);
+		}
 	});
 });
 

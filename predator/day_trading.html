@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Predator-Alerts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+	<div class="col-md-3">
+		<h4><b>Gainers 1 Hour</b></h4>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Change %</th>
+					</tr>
+				</thead>
+				<tbody id="gainers_1h">
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<h4><b>Losers 1 Hour</b></h4>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Change %</th>
+					</tr>
+				</thead>
+				<tbody id="losers_1h">
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<h4><b>Gainers 24 Hour</b></h4>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Change %</th>
+					</tr>
+				</thead>
+				<tbody id="gainers_24h">
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<h4><b>Losers 24 Hour</b></h4>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Change %</th>
+					</tr>
+				</thead>
+				<tbody id="losers_24h">
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="sails.io.js"></script>
+<script type="text/javascript" src="custom.js"></script>
+</body>
+</html>
