@@ -10,8 +10,10 @@ $(document).ready(function(){
 	//socket_request();
 	//setInterval(socket_request, 300000);
 
-	io.socket.post('/predatortrade/subscribe_room',{roomName:roomName},function (resData) {
-		//console.log(resData);
+	io.socket.on( 'connect', function () {
+		io.socket.post('/predatortrade/subscribe_room',{roomName:roomName},function (resData) {
+			//console.log(resData);
+		}); 
 	}); 
 	
 	io.socket.on('predator_alert', function (object){
